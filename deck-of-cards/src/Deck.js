@@ -27,9 +27,11 @@ const Deck = () => {
 
     const drawCard = async () => {
         try {
-            const response = await axios.get(`${BASE_URL}/${deck.deck_id}/draw/?count=5`);
+            const response = await axios.get(`${BASE_URL}/${deck.deck_id}/draw/?count=1`);
             setDeck(response.data);
             console.log(`${response.data.remaining}, ${response.data.deck_id}`);
+            console.log(`Draw button has been clicked`, response.data);
+
            
         } catch (e) {
             console.log(e);
@@ -40,8 +42,9 @@ const Deck = () => {
         try {
             const response = await axios.get(`${BASE_URL}/${deck.deck_id}/shuffle`);
             setDeck(deck); // Update deck to trigger re-render
-            console.log(response.data)
-                drawCard(); // Draw new cards if the deck ID hasn't changed
+
+            console.log(`Shuffle button has been clicked`, response.data);
+            drawCard(); 
             
         } catch (e) {
             console.log(e);

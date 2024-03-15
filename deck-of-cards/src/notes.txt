@@ -1,0 +1,29 @@
+Part 1
+
+//Display deck of cards, one at a time
+//When page loads, , fetch API to create a new deck
+//Add button that will let you draw a cards
+//there is a limit of cards
+//if all cards have been drawned, show alert message text “Error: no cards remaining!”.
+
+Components
+
+- Deck
+    //Render div that will represent the "Deck" and "draw" button
+        *this component will have useState(card, setCard)
+
+    //Fetch API once page loads. 
+            *this will require the useEffect()
+
+   
+       
+
+- Cards:
+        //When draw is clicked:
+                * creat a  new div that will be after the previous (will use an array)
+                *Update state: add num of cards = 1
+    * Previos card needs to be referenced nd new card shows on top
+     * If num of card === X show alert and render new button called "new deck"
+            **this will shuffle the deck (maybe needs useRef())
+
+            //useRef-Id
